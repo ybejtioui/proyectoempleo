@@ -1,0 +1,74 @@
+ProyectoEmpBundle\Entity\Curriculum:
+    type: entity
+    table: curriculum
+    indexes:
+        fk_curriculum_usuarios:
+            columns:
+                - id_usuario
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        genero:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+        dni:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+        fnacimiento:
+            type: date
+            nullable: true
+        direccion:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        gradocapacidad:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+        idioma:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+        estudiante:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+        desempleado:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+    manyToOne:
+        idUsuario:
+            targetEntity: Usuarios
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_usuario:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

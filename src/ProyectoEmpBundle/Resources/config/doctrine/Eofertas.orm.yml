@@ -1,0 +1,116 @@
+ProyectoEmpBundle\Entity\Eofertas:
+    type: entity
+    table: eofertas
+    indexes:
+        fk_oferta_compempresa:
+            columns:
+                - id_oferta_comp
+    uniqueConstraints:
+        id:
+            columns:
+                - id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titulopuesto:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        provinciapuesto:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        numerovacaantes:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        descripcion:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        nivelestudios:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        experienciareq:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        idiomas:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        jornada:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        salario:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        duracion:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        tipocontrato:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        horario:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        personalacargo:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        estado:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    manyToOne:
+        idOfertaComp:
+            targetEntity: Compempresa
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_oferta_comp:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

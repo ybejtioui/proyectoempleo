@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/ProyectEmpleo/src/ProyectoEmpBundle/Resources/views/layout.html.twig</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/app/config/config.yml</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/src/ProyectoEmpBundle/Form/CurriculumType.php</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/src/ProyectoEmpBundle/Controller/CurriculumController.php</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/src/ProyectoEmpBundle/Entity/Curriculum.php</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/src/ProyectoEmpBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/src/ProyectoEmpBundle/Resources/views/Curriculum/curriculum.html.twig</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/src/ProyectoEmpBundle/Resources/views/Curriculum/edit.html.twig</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/app/AppKernel.php</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/composer.json</file>
+            <file>file:/C:/wamp/www/ProyectEmpleo/app/config/routing.yml</file>
+        </group>
+    </open-files>
+</project-private>

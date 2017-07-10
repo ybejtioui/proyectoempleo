@@ -1,0 +1,36 @@
+<!doctype HTML>
+<html></html>
+<head>
+    <meta charset="utf-8">
+
+    <link type="text/css" rel="stylesheet" href="chosen.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript"  src="//chosen.jquery.min.js"> </script>
+    <script type="text/javascript"  src="chosen.jquery.js"> </script>
+
+    <script>
+
+        $(document).ready(function(e) {
+                $(".name").chosen({
+                    width : "30%"
+                });
+            }
+        );
+
+    </script>
+</head>
+<body>
+
+<select class="name" id="">
+    
+    <option value="Rojo" >Rojo</option>
+    <option value="negro" >negro</option>
+    <option value="Azul" >Azul</option>
+    <option value="Amarillo" >Amarillo</option>
+    <option value="Violeta" >Violeta</option>
+    <option value="Marron" >Marron</option>
+    <option value="Gris" >Gris</option>
+    <option value="Blanco" >Blanco</option>
+</select>
+
+</body>

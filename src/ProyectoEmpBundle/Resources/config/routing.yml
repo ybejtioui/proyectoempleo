@@ -1,0 +1,85 @@
+#login:
+mylogin:
+    path: /mylogin
+    defaults: { _controller: ProyectoEmpBundle:Usuarios:login }
+        
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+  
+complogin:
+    path: /complogin
+    defaults: { _controller: ProyectoEmpBundle:Eusuarios:elogin }
+
+complogin_check:
+    path: /login_check
+    
+complogout:
+    path: /logout
+    
+inicio:
+    path: /inicio    
+    defaults: { _controller: ProyectoEmpBundle:Default:index } 
+    
+compempresa:
+    path: /empresa/{id_usuario}    
+    defaults: { _controller: ProyectoEmpBundle:Compempresa:compempresa }    
+    
+compedit:
+    path: /compedit/{id_usuario}
+    defaults: { _controller: ProyectoEmpBundle:Compempresa:edit }
+    
+curriculum:
+    path: /curriculum/{id_usuario}
+    defaults: { _controller: ProyectoEmpBundle:Curriculum:curriculum } 
+# a que controlador va dirigida la ruta ( Bundle, controlador, accion)
+    
+edit:
+    path: /edit/{id_usuario}
+    defaults: { _controller: ProyectoEmpBundle:Curriculum:edit }
+    
+experiencia:
+    path: /experiencia/{id_curriculum}
+    defaults: { _controller: ProyectoEmpBundle:Experiencia:experiencia } 
+    
+delete_edit:
+    path: /experiencia/{id_oferta}
+    defaults: { _controller: ProyectoEmpBundle:Experiencia:editexperiencia }  
+    
+oferta:
+    path: /oferta/{id_empresa}
+    defaults: { _controller: ProyectoEmpBundle:Eoferta:eoferta } 
+    
+delete_oferta:
+    path: /deleteoferta/{id_oferta}
+    defaults: { _controller: ProyectoEmpBundle:Eoferta:deleteoferta }
+
+edit_oferta:
+    path: /editoferta/{id_oferta}
+    defaults: { _controller: ProyectoEmpBundle:Eoferta:editoferta }       
+
+listaOfertas:    
+    path: /listafertas/{id_empresa}
+    defaults: { _controller: ProyectoEmpBundle:ListaOfertas:listaofertas } 
+
+listaOfertasAdm:    
+    path: /listaofertasAdm
+    defaults: { _controller: ProyectoEmpBundle:ListaOfertasAdm:listaofertasadm } 
+ 
+publicar_oferta:    
+    path: /PublicarOferta/{id_oferta}
+    defaults: { _controller: ProyectoEmpBundle:ListaOfertasAdm:PublicarOfertaAdm }     
+
+finalizar_oferta:    
+    path: /FinalizarOferta/{id_oferta}
+    defaults: { _controller: ProyectoEmpBundle:ListaOfertasAdm:FinalizarOfertaAdm }    
+    
+verr_oferta:    
+    path: /VerOferta/{id_oferta}
+    defaults: { _controller: ProyectoEmpBundle:ListaOfertasAdm:VerOfertaAdm }     
+    
+proyecto_emp_homepage:
+    path:     /
+    defaults: { _controller: ProyectoEmpBundle:Default:index }

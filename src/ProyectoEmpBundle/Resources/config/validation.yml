@@ -1,0 +1,7 @@
+#ProyectoEmpBundle\Entity\users:
+#    properties:
+#        nombre:
+#            - NotBlank: {message:"El nombre no puede estar vacio"}
+#            - Length :
+#                min: 2
+#                minMessage: " Tiene que tener como minimo 2 caracteres" 

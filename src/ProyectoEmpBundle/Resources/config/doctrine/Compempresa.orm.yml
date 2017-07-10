@@ -1,0 +1,88 @@
+ProyectoEmpBundle\Entity\Compempresa:
+    type: entity
+    table: compempresa
+    indexes:
+        fk_compempresa_compusuario:
+            columns:
+                - id_comp_usuarios
+    uniqueConstraints:
+        CIF:
+            columns:
+                - CIF
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        compName:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: comp_name
+        cif:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: CIF
+        antiguedad:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        direccion:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: Direccion
+        nombrePc:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: nombre_pc
+        telefonoPc:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+            column: telefono_pc
+        emailPc:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: email_pc
+        compLogotipo:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: comp_logotipo
+    manyToOne:
+        idCompUsuarios:
+            targetEntity: Eusuarios
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_comp_usuarios:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,16 @@
+{%extends "ProyectoEmpBundle::layout.html.twig"%}
+{%block content %}
+    <div class="col-lg-6">
+        <h1> Empresa </h1>
+        {% for message in app.session.flashbag().get("status") %}
+            <div class="alert alert-success">{{message}}</div>
+        {% endfor %}
+
+        {{ form_start(form)}}
+        <div> <img width="100" src="{{ asset("uploads/"~empresa.compLogotipo)}}" alt="Logotipo"/>
+            {{form_row(form.compLogotipo)}}</div>
+        {{ form_end(form)}}
+    </div>
+        
+    <div classe="clearfix"> </div>
+{%endblock %}

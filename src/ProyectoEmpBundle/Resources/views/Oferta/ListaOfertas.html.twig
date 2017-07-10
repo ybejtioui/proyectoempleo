@@ -1,0 +1,45 @@
+{%extends "ProyectoEmpBundle::layout.html.twig"%}
+{%block content %}
+    <div class="col-lg-6">
+        <h1> Lista Ofertas </h1>
+        {% for message in app.session.flashbag().get("status") %}
+            <div class="alert alert-success">{{message}}</div>
+        {% endfor %}
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Titulo del puesto</th>
+                <th>Nº Vacantes</th>
+                <th>Provincia del puesto</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            {% for ofertas in ofertas %}
+                <tr>
+                    <td>{{ ofertas.Titulopuesto }}</td>
+                    <td>{{ ofertas.numerovacaantes }}</td>
+                    <td>{{ ofertas.provinciapuesto }}</td>
+                    <td>{{ ofertas.descripcion }}</td>
+                    <td>{{ ofertas.estado }}</td> 
+                    <td>
+                        {% if ofertas.estado== "En Revision" %}
+                            <a href="{{path("edit_oferta", {"id_oferta":ofertas.id})}}" class="btn btn-success">Editar</a>
+                        {% else %} 
+                            <a href="{{path("edit_oferta", {"id_oferta":ofertas.id})}}" class="btn btn-success disabled">Editar</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if ofertas.estado== "En Revision" %}
+                            <a href="{{path("delete_oferta", {"id_oferta":ofertas.id})}}" class="btn btn-danger">Eliminar</a>
+                        {% else %} 
+                            <a href="{{path("delete_oferta", {"id_oferta":ofertas.id})}}" class="btn btn-danger disabled">Eliminar</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div classe="clearfix"> </div>
+{%endblock %}

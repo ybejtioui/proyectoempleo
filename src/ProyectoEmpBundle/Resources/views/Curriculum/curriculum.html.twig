@@ -1,0 +1,29 @@
+{%extends "ProyectoEmpBundle::layout.html.twig"%}
+{%block content %}
+    <div class="col-lg-6">
+        <h1> Curriculum </h1>
+        {% for message in app.session.flashbag().get("status") %}
+            <div class="alert alert-success">{{message}}</div>
+        {% endfor %}
+        {% block stylesheets %}
+    {% stylesheets filter='cssrewrite'
+      
+      'bundles/pinanoselect2/css/select2.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+        
+        <script type="text/javascript">
+                $(document).ready(function() {
+                        $(".select").select2();
+                });
+
+        </script>
+
+        {{ form_widget(form.idioma)}}
+    </div>
+        
+    <div classe="clearfix"> </div>
+{%endblock %}

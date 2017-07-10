@@ -1,0 +1,46 @@
+{%extends "ProyectoEmpBundle::layout.html.twig"%}
+{%block content %}
+    <div class="col-lg-6">
+        <h1> Lista Ofertas ADMIN </h1>
+        {% for message in app.session.flashbag().get("status") %}
+            <div class="alert alert-success">{{message}}</div>
+        {% endfor %}
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Empresa</th>
+                <th>Titulo del puesto</th>
+                <th>Nº Vacantes</th>
+                <th>Provincia del puesto</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Ver</th>
+                <th>Cambiar Estado</th>
+            </tr>
+            {% for ofertas in ofertas %}
+                <tr>
+                    <td>{{ ofertas.empresa.compName }}</td>
+                    <td>{{ ofertas.Titulopuesto }}</td>
+                    <td>{{ ofertas.numerovacaantes }}</td>
+                    <td>{{ ofertas.provinciapuesto }}</td>
+                    <td>{{ ofertas.descripcion }}</td>
+                    <td>{{ ofertas.estado }}</td> 
+                    <td><a href="{{path("edit_oferta", {"id_oferta":ofertas.id})}}" class="btn btn-success">Ver</a></td>      
+                    <td>
+                        {% if ofertas.estado== "En Revision" %}
+                            <a href="{{path("publicar_oferta", {"id_oferta":ofertas.id})}}" class="btn btn-primary">Publicar</a>
+                        {% endif %}
+                        {% if ofertas.estado== "Publicada" %}
+                            <a href="{{path("finalizar_oferta", {"id_oferta":ofertas.id})}}" class="btn btn-warning">Finalizar</a>
+                        {% endif %}
+                        {% if ofertas.estado== "Finalizada" %} 
+                                <a href="" class="btn btn-danger disabled">Finalizada</a>
+                        {% endif %}
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div classe="clearfix"> </div>
+{%endblock %}

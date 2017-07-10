@@ -1,0 +1,48 @@
+{%extends "ProyectoEmpBundle::layout.html.twig"%}
+{%block content %}
+{#    
+    {% if error %}
+    {{ error.messageKey|trans(error.messageData, 'security')}}
+    {% endif %}      
+    {% if(app.user) != null%}
+      {{ dump(app.user)}}
+    {%endif%}
+#}    
+   {% if is_granted("ROLE_USER") %}
+       <strong>  
+      Estas logeado como CANDIDATO.
+      </strong> 
+   {%endif%}
+   {% if is_granted("ROLE_ADMIN") %}
+       <strong>  
+      Estas logeado como ADMINISTRADOR.
+      </strong> 
+   {%endif%}
+     
+    <div class="col-lg-6">
+        <h2>Entrar Empresas </h2>
+        <form action="{{path("complogin_check")}}" method="post">  
+            <label>Email:</label>  
+            <input type="email" id="username" name="_username" value="{{last_username}}" class="form-control" />
+             </br>
+           <label>Contraseña:</label> 
+            <input type="password" id="password" name="_password"   class="form-control" />
+            </br>
+            <input type="submit" value="entrar"   class="btn btn-success" />
+            <input type="hidden"   name="_target_path"   value="/complogin" />
+        </form>   
+    </div>
+             
+    <div class="col-lg-6">
+        <h2>Registrate</h2>
+        </hr>
+        {% if error %}
+          {{ error.messageKey|trans(error.messageData, 'status')}}
+        {% endif %}
+        
+        {{form_start(form)}}  
+        {{form_end(form)}}  
+    </div>          
+    <div class="clearfix">
+    </div>
+{%endblock %}

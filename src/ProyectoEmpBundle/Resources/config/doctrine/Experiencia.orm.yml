@@ -1,0 +1,50 @@
+ProyectoEmpBundle\Entity\Experiencia:
+    type: entity
+    table: experiencia
+    indexes:
+        fk_experiencia_curriculum:
+            columns:
+                - id_curriculum
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: true
+        duracion:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        empresa:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        cargo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    manyToOne:
+        idCurriculum:
+            targetEntity: Curriculum
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_curriculum:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,64 @@
+{% extends "ProyectoEmpBundle::layout.html.twig"%} 
+{% block content %}
+
+    <div>
+        <table style="margin-left:360px; margin-top:50px;" border="0" >    
+            <tr>
+                <td><h3><span class="label label-default">Es hora que encuentres el trabajo que te mereces</span></h3>
+            </tr>    
+            <tr><td>
+                    <form methode="get" action="" class="form-inline" role="search" >
+
+                        <div class="form-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>
+                                <input  type="text" name="puesto" value="{{app.request.get('puesto')}}" class="form-control" placeholder="¿Que trabajo buscas?" requiered> </span>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i>
+                                <input type="text" name="lugar" value="{{app.request.get('lugar')}}" class="form-control" placeholder="¿Donde?"></span>  
+                        </div>
+                        <input type="submit" value="Buscar" class="btn btn-default"> 
+                    </form>
+                </td>
+            </tr>
+            <tr></tr> 
+            <tr></tr>  
+        </table> 
+       </div>                 
+        <br>
+ 
+        <div class="col-lg-8" style=" margin-bottom:200px">
+        <h2> Resultado de ofertas </h2>
+        {% for message in app.session.flashbag().get("status") %}
+            <div class="alert alert-success">{{message}}</div>
+        {% endfor %}
+
+        <table class="table table-bordered" >
+            <tr>
+                <th>Logo</th>
+                <th>Titulo del puesto</th>
+                <th>Nº Vacantes</th>
+                <th>Provincia del puesto</th>
+                <th>Descripción</th>
+            </tr>
+            {% for ofertas in ofertas %}
+                <tr>
+                    <td><img width="100" src="{{ asset("uploads/"~ofertas.empresa.compLogotipo)}}" alt="Logotipo"/></td>
+                     <td>{{ ofertas.empresa.compname }}</td>
+                    <td>{{ ofertas.Titulopuesto }}</td>
+                    <td>{{ ofertas.numerovacaantes }}</td>
+                    <td>{{ ofertas.provinciapuesto }}</td>
+                    <td>{{ ofertas.descripcion }}</td>                   
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+         <br>
+          <br>
+          
+    <footer  class="footer navbar-fixed-bottom"> 
+        <div class="jumbotron" style="position:absolute; bottom: 0; width: 100%"> 
+            <div class="">¡Publicar ofertas de empleo en Keytojob es gratis!</br>
+                <button type="button" class="btn default"> Publica tu oferta de empleo </button>
+            </div>
+        </div> 
+    </footer>    
+{% endblock %}

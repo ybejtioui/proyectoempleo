@@ -1,0 +1,56 @@
+ProyectoEmpBundle\Entity\Eusuariosxxx:
+    type: entity
+    table: eusuariosxxx
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        apellido:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        role:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+        tef:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+        login:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
